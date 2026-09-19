@@ -18,7 +18,7 @@ const projects: Project[] = [
     title: 'NetSentinel AI — AI-Powered Network Threat Detection System',
     category: 'AI / CYBERSECURITY',
     description: 'An AI-powered network threat-detection concept built for Security Operations Center workflows during the IGNITION Innovation Hackathon. Combined a Random Forest machine-learning approach with rule-based detection to flag suspicious network activity.',
-    githubUrl: 'https://github.com/singhakshitpratap911-hue',
+    githubUrl: 'https://github.com/singhakshitpratap911-hue/NetSentinel_AI_Network_Threat_Detection',
     tech: ['Random Forest', 'Rule-Based Detection', 'SOC Workflows', 'Machine Learning', 'Python'],
     metrics: [
       { label: 'EVENT', value: 'IGNITION Hackathon' },
@@ -31,7 +31,7 @@ const projects: Project[] = [
     title: 'Network Traffic Analysis Framework for Cyber Attack Detection',
     category: 'CYBERSECURITY / NETWORK ANALYSIS',
     description: 'A security testing and traffic analysis project using a virtualized Kali Linux and Windows environment. Explored port scanning, SYN flooding, and brute-force testing in controlled, authorized lab scenarios, then inspected packet telemetry in Wireshark to study anomaly signatures and false positives.',
-    githubUrl: 'https://github.com/singhakshitpratap911-hue',
+    githubUrl: 'https://github.com/singhakshitpratap911-hue/network-attack-detection',
     tech: ['Kali Linux', 'Windows', 'Wireshark', 'Nmap', 'Hping3', 'Hydra', 'Network Telemetry'],
     metrics: [
       { label: 'ENVIRONMENT', value: 'Kali Linux + Windows' },
@@ -44,7 +44,7 @@ const projects: Project[] = [
     title: 'SmartPose AI Camera',
     category: 'ANDROID / COMPUTER VISION',
     description: 'A camera application concept built around CameraX-oriented workflows and real-time pose-guidance functionality. Structured using MVVM and Clean Architecture principles, with documented setup, permissions, extension points, and customization guidance.',
-    githubUrl: 'https://github.com/singhakshitpratap911-hue',
+    githubUrl: 'https://github.com/singhakshitpratap911-hue/SmartPoseAICamera',
     tech: ['Android Studio', 'CameraX', 'Pose Estimation', 'MVVM', 'Clean Architecture'],
     metrics: [
       { label: 'PLATFORM', value: 'Android' },
@@ -57,7 +57,7 @@ const projects: Project[] = [
     title: 'Flying Cat',
     category: 'GAME DEVELOPMENT / INTERACTIVE',
     description: 'An interactive game prototype with gameplay visuals, responsive controls, and a desert-themed environment. Delivered with project architecture notes, setup guidance, controls documentation, and customization instructions.',
-    githubUrl: 'https://github.com/singhakshitpratap911-hue',
+    githubUrl: 'https://github.com/singhakshitpratap911-hue/Flying-cat',
     tech: ['Game Design', 'Interactive Controls', 'Prototyping', 'Technical Documentation'],
     metrics: [
       { label: 'TYPE', value: 'Interactive Game' },
