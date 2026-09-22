@@ -1,0 +1,166 @@
+/* RESPONSIVE-ONLY FIX
+   Add this block to the END of src/index.css.
+   It changes layout behavior only; it does not change text, project data, images, or styling on desktop.
+*/
+
+/* The first section is the portfolio hero. */
+#root > div > section:first-child {
+  min-height: 100svh;
+  min-height: 100dvh;
+}
+
+@media (max-width: 767px) {
+  #root > div > section:first-child {
+    height: auto;
+    min-height: 100svh;
+    min-height: 100dvh;
+    overflow: hidden;
+  }
+
+  /* Hero video: keep the landscape source visible on portrait phones. */
+  #root > div > section:first-child > div:has(> video) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #root > div > section:first-child > div:has(> video) > video {
+    display: block;
+    width: 100vw;
+    height: 100dvh;
+    max-width: none;
+    object-fit: cover;
+    object-position: 67% center;
+    transform: none;
+  }
+
+  /* Keep the cinematic dark blend, but do not cover the whole video. */
+  #root > div > section:first-child > div:has(> video) > div:first-of-type {
+    width: 72%;
+    background: linear-gradient(
+      90deg,
+      rgba(0,0,0,.98) 0%,
+      rgba(0,0,0,.76) 42%,
+      rgba(0,0,0,.18) 82%,
+      transparent 100%
+    );
+  }
+
+  /* Emblem remains visible on phones without covering the content. */
+  #root > div > section:first-child > div:has(> video) > div:last-of-type {
+    right: 12px;
+    bottom: 12px;
+    z-index: 10;
+    transform: scale(.72);
+    transform-origin: bottom right;
+  }
+
+  /* Content can grow vertically instead of being squeezed into the desktop layout. */
+  #root > div > section:first-child > div:has(> header) {
+    min-height: 100dvh;
+    height: auto;
+    padding: max(16px, env(safe-area-inset-top)) 18px max(22px, env(safe-area-inset-bottom));
+  }
+
+  #root > div > section:first-child > div:has(> header) > header > a:first-child {
+    font-size: 12px;
+    letter-spacing: .25em;
+  }
+
+  #root > div > section:first-child > div:has(> header) > header > a:last-child {
+    font-size: 9px;
+    letter-spacing: .14em;
+    padding: 8px 10px;
+    white-space: nowrap;
+  }
+
+  /* Main hero row. */
+  #root > div > section:first-child > div:has(> header) > div:nth-of-type(1) {
+    width: 100%;
+    max-width: 100%;
+    padding-top: 4vh;
+    padding-bottom: 3vh;
+    margin-top: auto;
+    margin-bottom: auto;
+    align-items: flex-start;
+  }
+
+  /* Headline scales with viewport width and cannot create horizontal scrolling. */
+  #root > div > section:first-child h1 {
+    font-size: clamp(2.65rem, 13.2vw, 4.2rem) !important;
+    line-height: .82 !important;
+    letter-spacing: -.015em;
+    max-width: 100%;
+  }
+
+  #root > div > section:first-child h1 span {
+    white-space: nowrap;
+  }
+
+  /* Technology line: wrap instead of overflowing on narrow phones. */
+  #root > div > section:first-child > div:has(> header) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) p {
+    font-size: clamp(8px, 2.5vw, 10px);
+    line-height: 1.55;
+    letter-spacing: .16em;
+    white-space: normal;
+  }
+
+  /* Description. */
+  #root > div > section:first-child > div:has(> header) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) p {
+    font-size: clamp(11px, 3.1vw, 13px);
+    line-height: 1.65;
+    letter-spacing: .02em;
+  }
+
+  /* CTAs stay inside the viewport. */
+  #root > div > section:first-child a[href="#work"],
+  #root > div > section:first-child a[href="/resume.pdf"] {
+    min-height: 46px;
+    padding-left: 14px;
+    padding-right: 14px;
+    font-size: 9px;
+    letter-spacing: .15em;
+    white-space: nowrap;
+  }
+
+  #root > div > section:first-child > div:has(> header) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) {
+    gap: 10px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 380px) {
+  #root > div > section:first-child > div:has(> header) {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  #root > div > section:first-child h1 {
+    font-size: clamp(2.45rem, 12.8vw, 3.2rem) !important;
+  }
+
+  #root > div > section:first-child a[href="#work"],
+  #root > div > section:first-child a[href="/resume.pdf"] {
+    font-size: 8px;
+    letter-spacing: .12em;
+    padding-left: 11px;
+    padding-right: 11px;
+  }
+}
+
+/* Small landscape devices keep the desktop composition instead of using the portrait rules. */
+@media (orientation: landscape) and (max-height: 600px) and (max-width: 900px) {
+  #root > div > section:first-child > div:has(> header) {
+    padding-top: 10px;
+    padding-bottom: 12px;
+  }
+
+  #root > div > section:first-child h1 {
+    font-size: clamp(2.4rem, 8vw, 4.8rem) !important;
+  }
+
+  #root > div > section:first-child > div:has(> header) > div:nth-of-type(1) {
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+  }
+}
