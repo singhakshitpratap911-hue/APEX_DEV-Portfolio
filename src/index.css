@@ -7,4 +7,42 @@ html, body {
   overflow-x: hidden;
   background-color: #000;
 }
-@import "./responsive-only.css";
+
+/* Responsive hero video: landscape on desktop/landscape screens, portrait on portrait screens. */
+.hero-video-portrait {
+  display: none;
+}
+
+.hero-video-landscape {
+  display: block;
+}
+
+@media screen and (orientation: portrait) {
+  .hero-video-landscape {
+    display: none !important;
+  }
+
+  .hero-video-portrait {
+    display: block !important;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  .hero-video-landscape {
+    display: block !important;
+  }
+
+  .hero-video-portrait {
+    display: none !important;
+  }
+}
+
+/* Keep the hero content inside narrow portrait screens. */
+@media screen and (max-width: 768px) and (orientation: portrait) {
+  .hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
